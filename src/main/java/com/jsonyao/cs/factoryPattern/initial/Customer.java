@@ -1,7 +1,8 @@
 package com.jsonyao.cs.factoryPattern.initial;
 
 /**
- * 消费类
+ * 客户类
+ * On Java Version 1.8
  */
 public class Customer {
 
