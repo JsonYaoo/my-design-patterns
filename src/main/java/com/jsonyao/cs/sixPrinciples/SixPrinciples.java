@@ -4,25 +4,19 @@ import com.jsonyao.cs.sixPrinciples.dependenceInVersionPrinciple.DpdInversionPri
 import com.jsonyao.cs.sixPrinciples.dimitsLaw.DimitsLaw;
 import com.jsonyao.cs.sixPrinciples.interfaceIsolationPrinciple.ItfIsolationPrinciple;
 import com.jsonyao.cs.sixPrinciples.liSubstitutionPrinciple.LiSubPrinciple;
+import com.jsonyao.cs.sixPrinciples.openClosePrinciple.OpenClosePrinciple;
 import com.jsonyao.cs.sixPrinciples.singleResponsibilityPrinciple.SingleResPrinciple;
 
 /**
  * 设计模式六大原则:
- * F. 开闭原则:
- *      a. 概念:
- *          a.1. 软件中的对象(类、模块、函数等)应该对于扩展是开放的, 对于修改是关闭的
- *      b. 理解:
- *          b.1. 当需求发生变化时, 尽量扩展实体的行为来变化, 而不是通过修改已有的代码来实现变化
- *          b.2. 底层模块的变化, 必然有高层模块进行耦合, 它并不意味着不做任何修改
- *          b.3. 这个原则比较虚, 可以通过具体的设计模式去加深理解
- * G. 总结:
+ * A. 总结:
  *      a. 单一职责原则告诉我们实现类要职责单一
  *      b. 里氏替换原则告诉我们不要破坏继承体系
  *      c. 依赖倒置原则告诉我们要面向接口编程
  *      d. 接口隔离原则告诉我们在设计接口的时候要精简单一
  *      e. 迪米特法则告诉我们要减少对其他类的依赖, 减少对外暴露的方法, 降低耦合
  *      f. 开发原则是总纲, 告诉我们要对扩展开放, 对修改关闭
- * H. Relation：
+ * B. Relation：
  *      a. https://www.jianshu.com/p/3f91776c3672
  */
 public class SixPrinciples {
@@ -136,6 +130,23 @@ public class SixPrinciples {
          *      c. 注意:
          *          c.1. 虽然可以避免和非直接的类通信, 但是要通信, 必然会通过一个中介来发生联系, 过分地使用迪米特法则, 会产生大量地中介和传递类, 导致系统复杂度变高
          */
-        DimitsLaw.test();
+//        DimitsLaw.test();
+
+        /**
+         * F. 开闭原则:
+         *      a. 概念:
+         *          a.1. 软件中的对象(类、模块、函数等)应该对于扩展是开放的, 对于修改是关闭的
+         *      b. 问题由来:
+         *          b.1. 在软件的生命周期内, 因为变化、系统升级和维护等原因, 需要对软件原有代码进行修改时, 可能会将错误引入原本已经测试过的旧版本中, 破坏原有系统
+         *      c. 解决方案:
+         *          c.1. 遵循开闭原则, 就是为软件实体的未来事件而制定的对现行开发设计进行约束的一个原则,
+         *               当软件需要变化时, 尽量通过扩展软件实体的行为实现变化, 而不是通过修改已有的代码来实现变化
+         *      b. 理解:
+         *          b.1. 当需求发生变化时, 尽量扩展实体的行为来变化, 而不是通过修改已有的代码来实现变化
+         *          b.2. 底层模块的变化, 必然有高层模块进行耦合, 它并不意味着不做任何修改
+         *          b.3. 这个原则比较虚, 可以通过具体的设计模式去加深理解
+         */
+        OpenClosePrinciple.test();
     }
+
 }
