@@ -1,4 +1,4 @@
-package com.jsonyao.cs.factoryPattern.initial;
+package com.jsonyao.cs.factoryPattern.initialScenes;
 
 /**
  * 产品B

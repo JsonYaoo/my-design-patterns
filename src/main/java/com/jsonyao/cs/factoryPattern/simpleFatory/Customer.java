@@ -1,8 +1,5 @@
 package com.jsonyao.cs.factoryPattern.simpleFatory;
 
-import com.jsonyao.cs.factoryPattern.initial.ProductA;
-import com.jsonyao.cs.factoryPattern.initial.ProductB;
-
 /**
  * 简单工厂模式
  * On Java Version 1.8
