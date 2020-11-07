@@ -1,4 +1,4 @@
-package com.jsonyao.cs.SixPrinciples.singleResponsibility;
+package com.jsonyao.cs.SixPrinciples.singleResponsibilityPrinciple;
 
 /**
  * 2、案例修改方案1-直接在Animal类上修改

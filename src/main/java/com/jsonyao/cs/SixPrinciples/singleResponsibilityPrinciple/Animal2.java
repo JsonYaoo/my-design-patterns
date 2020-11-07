@@ -1,4 +1,4 @@
-package com.jsonyao.cs.SixPrinciples.singleResponsibility;
+package com.jsonyao.cs.SixPrinciples.singleResponsibilityPrinciple;
 
 /**
  * 3、案例修改方案2-新增吃肉eat2方法

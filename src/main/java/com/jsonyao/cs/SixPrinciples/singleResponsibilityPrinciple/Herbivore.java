@@ -1,4 +1,4 @@
-package com.jsonyao.cs.SixPrinciples.singleResponsibility;
+package com.jsonyao.cs.SixPrinciples.singleResponsibilityPrinciple;
 
 /**
  * 4、案例修改方案3-食草动物

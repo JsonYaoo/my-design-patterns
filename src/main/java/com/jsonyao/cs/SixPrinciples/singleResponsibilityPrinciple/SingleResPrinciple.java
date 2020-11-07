@@ -1,9 +1,9 @@
-package com.jsonyao.cs.SixPrinciples.singleResponsibility;
+package com.jsonyao.cs.SixPrinciples.singleResponsibilityPrinciple;
 
 /**
  * 单一职责原则-案例分析
  */
-public class SingleResponsibility {
+public class SingleResPrinciple {
 
     public static void test() {
         /**

@@ -1,4 +1,4 @@
-package com.jsonyao.cs.SixPrinciples.singleResponsibility;
+package com.jsonyao.cs.SixPrinciples.singleResponsibilityPrinciple;
 
 /**
  * 1、初始案例
