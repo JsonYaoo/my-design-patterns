@@ -1,20 +1,13 @@
 package com.jsonyao.cs.SixPrinciples;
 
 import com.jsonyao.cs.SixPrinciples.DependenceInVersionPrinciple.DpdInversionPrinciple;
+import com.jsonyao.cs.SixPrinciples.DimitsLaw.DimitsLaw;
 import com.jsonyao.cs.SixPrinciples.InterfaceIsolationPrinciple.ItfIsolationPrinciple;
 import com.jsonyao.cs.SixPrinciples.LiSubstitutionPrinciple.LiSubPrinciple;
 import com.jsonyao.cs.SixPrinciples.singleResponsibilityPrinciple.SingleResPrinciple;
 
 /**
  * 设计模式六大原则:
- * E. 迪米特法则:
- *      a. 概念:
- *          a.1. 迪米特法则在于降低类之间的耦合, 每个类尽量减少对其他类的依赖, 尽量减少对外暴露的方法, 使得功能模块独立, 低耦合
- *      b. 理解:
- *          b.1. 只和直接的朋友交流, 即只通过成员变量、方法的输入输出参数对类进行直接注入
- *          b.2. 减少对朋友的理解, 即减少一个类对外博爱路的方法
- *      c. 注意:
- *          c.1. 虽然可以避免和非直接的类通信, 但是要通信, 必然会通过一个中介来发生联系, 过分地使用迪米特法则, 会产生大量地中介和传递类, 导致系统复杂度变高
  * F. 开闭原则:
  *      a. 概念:
  *          a.1. 软件中的对象(类、模块、函数等)应该对于扩展是开放的, 对于修改是关闭的
@@ -27,7 +20,7 @@ import com.jsonyao.cs.SixPrinciples.singleResponsibilityPrinciple.SingleResPrinc
  *      b. 里氏替换原则告诉我们不要破坏继承体系
  *      c. 依赖倒置原则告诉我们要面向接口编程
  *      d. 接口隔离原则告诉我们在设计接口的时候要精简单一
- *      e. 迪米特法则告诉我们要降低耦合
+ *      e. 迪米特法则告诉我们要减少对其他类的依赖, 减少对外暴露的方法, 降低耦合
  *      f. 开发原则是总纲, 告诉我们要对扩展开放, 对修改关闭
  * H. Relation：
  *      a. https://www.jianshu.com/p/3f91776c3672
@@ -128,6 +121,21 @@ public class SixPrinciples {
          *          d.1. 单一职责原则注重的是职责; 而接口隔离原则注重的是对接口依赖的隔离
          *          d.2. 单一职责原则主要是约束类, 其次才是接口和方法, 针对的是程序中的实现和细节; 而接口隔离原则主要约束接口, 针对抽象和程序整体框架的构建
          */
-        ItfIsolationPrinciple.test();
+//        ItfIsolationPrinciple.test();
+
+        /**
+         * E. 迪米特法则:
+         *      a. 概念:
+         *          a.1. 迪米特法则在于降低类之间的耦合, 每个类尽量减少对其他类的依赖, 尽量减少对外暴露的方法, 使得功能模块独立, 低耦合
+         *          a.2. 定义:
+         *              a.2.1. 它要求一个对象应该对其他对象有最少的了解, 所以迪米特法则又叫最少知道原则
+         *      b. 理解:
+         *          b.1. 减少对其他类的依赖: 只和直接的朋友交流, 即只通过成员变量、方法的输入输出参数对类进行直接注入, 在方法体内部的类就不是直接朋友了
+         *          b.2. 减少对外暴露的方法: 减少对朋友的了解解, 即减少一个类对外暴露的方法
+         *             => 满足以上两点即满足迪米特法则
+         *      c. 注意:
+         *          c.1. 虽然可以避免和非直接的类通信, 但是要通信, 必然会通过一个中介来发生联系, 过分地使用迪米特法则, 会产生大量地中介和传递类, 导致系统复杂度变高
+         */
+        DimitsLaw.test();
     }
 }
