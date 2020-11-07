@@ -4,7 +4,7 @@ public class SimpleFatory {
 
     public Product createProduct(String type){
         switch (type){
-            case "A":
+            case "HighLvA":
                 return new ProductA();
             case "B":
                 return new ProductB();

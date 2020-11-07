@@ -6,7 +6,7 @@ package com.jsonyao.cs.factoryPattern.fatoryMethod;
 public class ProductA extends Product {
 
     public ProductA() {
-        System.out.println("制造产品A: Product A...");
+        System.out.println("制造产品A: Product HighLvA...");
     }
 
 }

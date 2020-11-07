@@ -8,16 +8,16 @@ public class LiSubPrinciple {
     public static void test() {
         /**
          * 1、案例1
-         *      A. 案例详情
+         *      HighLvA. 案例详情
          *          a. A类完成两数相减
          */
-//        A a = new A();
+//        HighLvA a = new HighLvA();
 //        System.out.println("100 - 50 = " + a.mySubtract(100, 50));
 //        System.out.println("100 - 80 = " + a.mySubtract(100, 80));
 
         /**
          * 2、案例2
-         *      A.案例详情
+         *      HighLvA.案例详情
          *          a. 需要增加两数相加的功能 以及 两数相加后再与100求和的功能
          *          b. 这里使用B类来继承A类, 重写myCount方法, 用于实现两数相加
          *      B. 缺点：
@@ -34,7 +34,7 @@ public class LiSubPrinciple {
 
         /**
          * 3、案例3
-         *      A. 案例详情
+         *      HighLvA. 案例详情
          *          a. 通过组合依赖完成新增功能
          *      B. 优点:
          *          a. 拆除了原来的继承关系, 采用了组合依赖的关系代替

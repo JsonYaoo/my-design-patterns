@@ -8,14 +8,14 @@ public class DpdInversionPrinciple {
     public static void test() {
         /**
          * 1、案例1
-         *      A. 案例详情
+         *      HighLvA. 案例详情
          *          a. 母亲给孩子讲故事, 照着书读
          */
 //        Mother.narrate(new Book());
 
         /**
          * 2、案例2
-         *      A. 案例详情
+         *      HighLvA. 案例详情
          *          a. 假如有一天, 孩子长大了, 需要了解国家大事, 不是看书, 而是看报纸了
          *          b. 这时需要新加入一个报纸类
          *          c. 但母亲narrate方法只能读书, 想要读报纸, 那么就要修改Mother里的方法, 显然不是好的设计

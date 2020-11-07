@@ -6,6 +6,6 @@ package com.jsonyao.cs.factoryPattern.abstractFactory;
 public class NewProductA extends NewProduct{
 
     public NewProductA() {
-        System.out.println("制造新产品A: New Product A...");
+        System.out.println("制造新产品A: New Product HighLvA...");
     }
 }

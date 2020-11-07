@@ -3,7 +3,7 @@ package com.jsonyao.cs.factoryPattern.simpleFatory;
 /**
  * 简单工厂模式
  * On Java Version 1.8
- * A. 基本介绍:
+ * HighLvA. 基本介绍:
  *      a. 简单工厂模式属于创建型模式, 又叫做静态工厂方法模式, 但不属于23种GOF模式之一
  *      b. 简单工厂模式是由一个工厂对象决定创建出哪一种产品类的实例
  *      c. 简单工厂模式是工厂模式家族中最简单实用的模式, 可以理解为是不同工厂模式的一个特殊实现
@@ -36,7 +36,7 @@ public class Customer {
 
     public static void main(String[] args) {
         SimpleFatory simpleFatory = new SimpleFatory();
-        simpleFatory.createProduct("A");
+        simpleFatory.createProduct("HighLvA");
         simpleFatory.createProduct("B");
     }
 

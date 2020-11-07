@@ -8,7 +8,7 @@ public class SingleResPrinciple {
     public static void test() {
         /**
          * 1、初始案例
-         *      A. 案例详情:
+         *      HighLvA. 案例详情:
          *          a. 刚开始, 因为公司是刚成立, 前期用户没什么需求, 产品提的需求很简单
          */
 //        Animal.eat("牛");
@@ -17,7 +17,7 @@ public class SingleResPrinciple {
 
         /**
          * 2、案例修改方案1
-         *      A. 案例详情:
+         *      HighLvA. 案例详情:
          *          a. 违背单一职责原则, 直接在Animal类上修改, 花销小
          *      B. 优点:
          *          a. 修改方法简单, 开发迅速, 时间花费少
@@ -33,7 +33,7 @@ public class SingleResPrinciple {
 
         /**
          * 3、案例修改方案2
-         *      A. 案例详情:
+         *      HighLvA. 案例详情:
          *          a. 新增吃肉eat2方法, 赋予动物不同eat行为, 然后分别调用
          *      B. 优点:
          *          a. 这种修改方法没有改动原来的方法, 而是在类中新增了一个方法, 虽然也违背了类的单一职责原则,
@@ -50,7 +50,7 @@ public class SingleResPrinciple {
 
         /**
          * 4、案例修改方案3
-         *      A. 案例详情:
+         *      HighLvA. 案例详情:
          *          a. 用户需要提供吃肉的服务, 这时就不得不修改代码
          *          b. 遵循单一职责原则, 需要将Animal类细分为草食动物类Herbivore和肉食动物类Predator
          *      B. 优点:
