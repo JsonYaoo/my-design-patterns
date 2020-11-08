@@ -9,6 +9,8 @@ import java.math.BigDecimal;
  *      b. 还可以再通过建立策略上下文持有用户支付接口的依赖, 封装调用工厂创建的过程, 统一通过上下文接口调用获取实际价格接口
  * B. 优点
  *      a. 相对于普通的策略模式, 策略工厂模式解决了多种用户类型需求时出现的多层if-else代码臃肿的问题
+ * C. Relation:
+ *      a. https://www.cnblogs.com/lisingshen/p/11782250.html
  */
 public class Client {
 
