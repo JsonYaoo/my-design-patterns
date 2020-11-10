@@ -1,15 +1,28 @@
 package com.jsonyao.cs.singletonPattern;
 
+import java.io.ObjectStreamException;
+import java.io.Serializable;
+
 /**
  * 5、双重检查锁
  */
-public class Singleton5 {
+public class Singleton5 implements Serializable {
 
     private volatile static Singleton5 instance;// 必须要保证可见性
 
-    public Singleton5() { }
+    private Singleton5() {
+        // 防⽌反射获取多个对象的漏洞 false
+        if(instance != null){
+            throw new RuntimeException("获取单例异常!");
+        }
+    }
 
-    public Singleton5(int code) {
+    private Singleton5(int code) {
+        // 防⽌反射获取多个对象的漏洞 false
+        if(instance != null){
+            throw new RuntimeException("获取单例异常!");
+        }
+
         System.out.println("设置了传递参数：" + code);
     }
 
@@ -22,6 +35,11 @@ public class Singleton5 {
             }
         }
 
+        return instance;
+    }
+
+    // 防止反序列化获取多个对象的漏洞
+    private Object readResolve() throws ObjectStreamException {
         return instance;
     }
 
