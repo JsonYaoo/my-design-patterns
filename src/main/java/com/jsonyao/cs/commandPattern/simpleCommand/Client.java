@@ -21,8 +21,20 @@ package com.jsonyao.cs.commandPattern.simpleCommand;
  *      d. 可以方便地实现对请求的Undo和Redo
  * E. 命令模式的缺点:
  *      a. 由于针对每一个命令都需要设计一个具体命令类, 所以在使用命令模式时可能会导致某些系统有过多的具体命令类, 当某些系统可能需要大量具体命令类时, 将会影响命令模式的使用
- * F. Relation：
+ * F. 使用场景:
+ *      a. 命令的调用者和命令执行者之间存在不同的生命周期, 意味着命令发送了并不是立即执行, 即命令发送出去后, 原先的请求发出者可能已经不存在了,
+ *         而命令对象本身还在, 可以通过网络传输到另一台机器, 给执行者执行
+ *              => 比如, Struts2中的action调用
+ *      b. 命令需要进行各种管理逻辑, 比如对多个命令的统一控制
+ *      c. 系统需要支持撤销或者重试(反撤销)操作, 命令对象可以把状态存储起来, 等到客户端需要撤销命令所产生的效果时, 可以调用undo()方法, 把命令所产生的效果撤销掉.
+ *         命令对象还可以提供redo()方法, 以供客户端在需要时再重新实施命令效果
+ *              => commandSample是通过Invoker管理命令状态, 而不是命令存储状态
+ *              => 比如数据库中的事务机制底层实现
+ *       d. 回调callBack()系统的使用, 其中callBack()讲的就是先将一个函数登记上, 然后在以后调用此函数
+ *       e. 将系统中所有命令记录在日志里, 待系统奔溃时, 可以根据日志中一条一条命令重新调用execute(), 从而恢复系统在崩溃前所做的数据更新
+ * G. Relation：
  *      a. https://www.cnblogs.com/meet/p/5116430.html
+ *      b. https://www.cnblogs.com/jmcui/p/10042235.html
  */
 public class Client {
 
@@ -30,11 +42,9 @@ public class Client {
         Command command1 = new ConcreteCommand1(new Receiver1());
         Command command2 = new ConcreteCommand2(new Receiver2());
 
-        Invoker invoker1 = new Invoker(command1);
-        invoker1.call();
-
-        Invoker invoker2 = new Invoker(command2);
-        invoker2.call();
+        Invoker invoker = new Invoker(command1, command2);
+        invoker.call1();
+        invoker.call2();
     }
 
 }

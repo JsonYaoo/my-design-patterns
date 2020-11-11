@@ -5,14 +5,22 @@ package com.jsonyao.cs.commandPattern.simpleCommand;
  */
 public class Invoker {
 
-    private Command command;
+    private Command command1;
 
-    public Invoker(Command command) {
-        this.command = command;
+    private Command command2;
+
+    public Invoker(Command command1, Command command2) {
+        this.command1 = command1;
+        this.command2 = command2;
     }
 
-    // 发起命令
-    public void call(){
-        command.excute();
+    // 发起命令1
+    public void call1(){
+        command1.excute();
+    }
+
+    // 发起命令2
+    public void call2(){
+        command2.excute();
     }
 }

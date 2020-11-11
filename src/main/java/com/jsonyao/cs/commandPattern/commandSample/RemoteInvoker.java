@@ -1,45 +1,61 @@
 package com.jsonyao.cs.commandPattern.commandSample;
 
+import java.util.Stack;
+
 /**
  * 遥控器调用者
  */
 public class RemoteInvoker {
 
-    // 开命令
-    private Command onCommand;
+    private Command turnUpCommand;
+    private Command turnDownCommand;
 
-    // 关命令
-    private Command offCommand;
+    private Stack<Command> undoCommadStack;
+    private Stack<Command> redoCommadStack;
 
-    // 撤销命令
-    private Command undoCommand;
+    public RemoteInvoker(Command turnUpCommand, Command turnDownCommand) {
+        this.turnUpCommand = turnUpCommand;
+        this.turnDownCommand = turnDownCommand;
 
-    public RemoteInvoker(Command onCommand, Command offCommand) {
-        this.onCommand = onCommand;
-        this.offCommand = offCommand;
+        undoCommadStack = new Stack<>();
+        redoCommadStack = new Stack<>();
     }
 
-    // 遥控器-on按钮实现
-    public void onButton(){
-
-        // 执行命令
-        onCommand.execute();
-
-        // 保存撤销命令
-        undoCommand = onCommand;
+    // 遥控器-切上一个台的按钮实现
+    public void turnUpButton(){
+        turnUpCommand.execute();
+        undoCommadStack.push(turnUpCommand);
+        if(!redoCommadStack.isEmpty()){
+            redoCommadStack.clear();
+        }
     }
 
-    // 遥控器-off按钮实现
-    public void offButton(){
-        // 执行命令
-        offCommand.execute();
-
-        // 保存撤销命令
-        undoCommand = offCommand;
+    // 遥控器-切下一个台的按钮实现
+    public void turnDownButton(){
+        turnDownCommand.execute();
+        undoCommadStack.push(turnDownCommand);
+        if(!redoCommadStack.isEmpty()){
+            redoCommadStack.clear();
+        }
     }
 
     // 遥控器-undo按钮实现
     public void undoButton(){
-        undoCommand.undo();
+        if(!undoCommadStack.isEmpty()){
+            Command command = undoCommadStack.pop();
+            command.undo();
+            redoCommadStack.push(command);
+        }else {
+            System.out.println("按钮无效...");
+        }
+    }
+
+    // 遥控器-redo按钮实现
+    public void redoButton(){
+        if(!redoCommadStack.isEmpty()){
+            redoCommadStack.pop().execute();
+        }else {
+            System.out.println("按钮无效...");
+        }
     }
 }
