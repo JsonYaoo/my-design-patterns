@@ -13,7 +13,9 @@ package com.jsonyao.cs.templatePattern;
  *      c. 存在一种反向的控制结构, 通过一个父类调用其子类的操作, 通过子类对父类进行扩展增加新的行为, 符合开闭原则
  * D. 缺点:
  *      a. 每个不同的实现都需要定义一个子类, 会导致类的个数增加, 系统更加庞大
- * E. Relation:
+ * E. 使用场景:
+ *      a. CGLIB动态代理、Spring、JDBC等各种框架中均有使用
+ * F. Relation:
  *      a. https://www.cnblogs.com/qq-361807535/p/6854191.html
  */
 public class Client {
