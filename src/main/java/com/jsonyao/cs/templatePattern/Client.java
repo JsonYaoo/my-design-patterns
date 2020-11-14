@@ -23,7 +23,6 @@ public class Client {
     public static void main(String[] args) {
         /**
          * 模板方法模式:
-         * A. 例子:
          *      a. 假设做菜有3步: 备料、做菜、上菜, 这三步是算法的骨架
          *      b. 然后做不同菜需要不同的料, 做时不同的方法, 以及如何盛装给客人, 这些就是不同的实现细节
          */
