@@ -10,6 +10,8 @@ package com.jsonyao.cs.compoundPattern;
  *          a.2. 策略模式: C是V的策略, 所以V包含的控制逻辑就是选择策略, 也就是选择控制器Controller
  *          a.3. 组合模式: V的自身实现应用了组合模式, 即调用顶层容器的repaint方法, 容器内的所有组件都会进行重绘
  *      => MVC应用了多个模式, 并能够较好的解决设计上的一般性问题, 所以被成为复合模式, 但应用复合模式的框架远不止MVC一个
+ *  C. Relation:
+ *      a. https://www.cnblogs.com/ayqy/p/4023367.html
  */
 public class CompoundPattern {
 }
