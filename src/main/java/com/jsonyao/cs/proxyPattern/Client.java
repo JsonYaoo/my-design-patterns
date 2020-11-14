@@ -16,7 +16,7 @@ import net.sf.cglib.proxy.Enhancer;
  *          => 注意这里说的是, 代理类和委托类之间的关系, 而不是代理类的创建
  *      b. 动态代理: 动态代理在实现阶段不用关心代理类, 而在运行阶段才指定哪一个对象
  * D. JDK动态代理 & CGLIB动态代理:
- *      a. JDK动态代理: 实现InvocationHandler的处理类, 利用反射机制生成一个实现了委托类接口(可以调用被代理方法) 和 继承了Proxy类(为了
+ *      a. JDK动态代理:  Proxy类利用反射机制以及一个实现InvocationHandler的处理类, 生成一个实现了委托类接口(可以调用被代理方法) 和 继承了Proxy类(为了
  *         持有已经实现InvocationHandler实例的引用) 的代理类, 使得在调用代理类具体方法时去调用实现InvocationHandler接口的处理类里的方法,
  *         但是只能对实现了接口的类生成代理
  *      b. CGLIB动态代理: 利用ASM开源包, 通过修改委托类的Class文件的字节码生成子类来处理, 其中主要是生成的子类去覆盖原本委托类中的方法,
