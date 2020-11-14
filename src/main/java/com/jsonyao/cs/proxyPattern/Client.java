@@ -1,5 +1,6 @@
 package com.jsonyao.cs.proxyPattern;
 
+import net.sf.cglib.core.DebuggingClassWriter;
 import net.sf.cglib.proxy.Enhancer;
 
 /**
@@ -25,7 +26,16 @@ import net.sf.cglib.proxy.Enhancer;
  *          c.2. 如果目标对象实现了接口, 还可以强制使用CGLIB实现AOP
  *          c.3. 如果目标对象没有实现接口, 则必须采用CGLIB进行动态代理, 实现AOP
  *              => 可以看到Spring会自动在JDK动态代理和CGLIB动态代理之间转换
- * E. 优点:
+ *      d. 对比:
+ *          d.1. JDK动态代理, 在调用代理类方法时是通过引用调用InvocationHandler实现类的invoke方法, 然后再反射调用委托类的方法, 属于反射调用, 有一定的性能花销
+ *          d.2. CGLIB动态代理, 在调用代理类方法时是通过引用调用MethodInterceptor实现类的intercept方法, 然后通过方法签名的index索引, 去代理类的FastClass
+ *               查找到代理类中具体的方法, 最后该方法调用父类(原委托类)的方法, 属于父类方法调用, 性能花销小
+ *          d.3. 在动态代理Class生成方面, CGLIB动态代理会每次都生成新的FastClass文件, 所以CGLIB动态代理会比JDK动态代理的慢点;
+ *               在方法调用方面, JDK动态代理属于反射调用, 而CGLIB动态代理属于父类方法调用, 所以CGLIB动态dialing会比JDK动态代理快
+ *          d.4. 因此, CGLIB在创建代理对象所花费的时间比JDK的高(约8倍?), 但CGLIB创建的代理对象本身的性能却比JDK的高不少(约10倍?), 所以如果代理对象是单例,
+ *               由于无须频繁创建代理对象, 这时比较适合使用CGLIB动态代理技术, 反之适合JDK动态代理技术.
+ *          d.5. 但是实际上JDK的速度在版本升级的时候都能提高很多性能, 而CGLIB却仍止步不前, 因此, 性能上比较似乎JDK更上一筹了
+ *E. 优点:
  *      a. 职责清晰: 真实角色就是实现实际业务逻辑的, 不用去关心其他非本职的业务, 而通过后期的代理去完成那些非真实角色本职的业务, 编程简洁清晰
  *      b. 保护目标对象: 在客户端和目标对象中间存在代理对象, 起到中介以及保护目标对象的作用
  *      c. 高扩展性: 符合开闭原则, 代理类的实现不是通过修改原有的代码, 而是通过扩展的方式织入新的业务代码, 符合对修改关闭, 对扩展开放的原则
@@ -35,6 +45,8 @@ import net.sf.cglib.proxy.Enhancer;
  *      c. http://hg.openjdk.java.net
  *      d. https://blog.csdn.net/wiseyl/article/details/14046975
  *      e. https://blog.csdn.net/xuerong_zhu/article/details/103896138/
+ *      f. https://www.cnblogs.com/cruze/p/3843996.html
+ *      g. https://blog.csdn.net/weixin_39666581/article/details/103899190
  */
 public class Client {
 
@@ -109,6 +121,8 @@ public class Client {
          *              c.2. 加载二进制字节码, 生成Class对象
          *              c.3. 通过反射机制获得实例构造, 并创建代理类对象
          */
+        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, ".\\cglib\\classes");
+
         // 初始化Enhancer实例
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(HelloCglib.class);
