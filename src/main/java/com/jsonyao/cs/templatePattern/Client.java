@@ -32,6 +32,7 @@ public class Client {
 
         System.out.println();
 
+
         // 红烧肉
         DodishTemplate braisedPork = new BraisedPork();
         braisedPork.dodish();
