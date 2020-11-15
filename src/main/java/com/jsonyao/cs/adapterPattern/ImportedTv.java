@@ -1,4 +1,4 @@
-package com.jsonyao.cs.AdapterPattern;
+package com.jsonyao.cs.adapterPattern;
 
 /**
  * 进口电视机
