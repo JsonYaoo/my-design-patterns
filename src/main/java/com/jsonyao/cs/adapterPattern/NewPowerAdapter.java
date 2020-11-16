@@ -3,7 +3,7 @@ package com.jsonyao.cs.adapterPattern;
 /**
  * 对象的适配器模式-电视机电源适配器
  */
-public class NewPowerAdapter {
+public class NewPowerAdapter implements TvPlug{
 
     private Power power;
 
