@@ -8,6 +8,7 @@ import java.io.Serializable;
  */
 public class Singleton5 implements Serializable {
 
+    // volatile防止重排序导致实例化未完成
     private volatile static Singleton5 instance;// 必须要保证可见性
 
     private Singleton5() {
@@ -27,8 +28,10 @@ public class Singleton5 implements Serializable {
     }
 
     public static Singleton5 getInstance(int code){
+        // 第一次减少锁的开销
         if(instance == null){
             synchronized (Singleton5.class){
+                // 第二次防止重复
                 if(instance == null){
                     instance = new Singleton5(code);
                 }
