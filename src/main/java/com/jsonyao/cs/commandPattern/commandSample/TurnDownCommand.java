@@ -1,7 +1,7 @@
 package com.jsonyao.cs.commandPattern.commandSample;
 
 /**
- * 灯亮具体命令
+ * 转下一个台具体命令
  */
 public class TurnDownCommand implements Command{
 
