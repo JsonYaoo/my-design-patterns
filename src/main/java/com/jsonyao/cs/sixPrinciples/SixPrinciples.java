@@ -15,7 +15,7 @@ import com.jsonyao.cs.sixPrinciples.singleResponsibilityPrinciple.SingleResPrinc
  *      c. 依赖倒置原则告诉我们要面向接口编程
  *      d. 接口隔离原则告诉我们在设计接口的时候要精简单一
  *      e. 迪米特法则告诉我们要减少对其他类的依赖, 减少对外暴露的方法, 降低耦合
- *      f. 开发原则是总纲, 告诉我们要对扩展开放, 对修改关闭
+ *      f. 开放原则是总纲, 告诉我们要对扩展开放, 对修改关闭
  * B. Relation：
  *      a. https://www.jianshu.com/p/3f91776c3672
  */
